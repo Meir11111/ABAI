@@ -1,0 +1,554 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tektur', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Меню */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Белый фон для меню */
+    padding: 20px 0; /* Увеличенные отступы для меню */
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 12px 20px;
+    display: block;
+    line-height: 1.5;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Баннер "ABAI IT VALLEY" */
+.hero {
+    background-image: url('Black Modern Information Technology Delivery Book Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 110vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;  /* Убираем отступы, чтобы избежать лишнего пространства */
+    background-color: #333; /* Темный фон для баннера */
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-family: 'Mixed', sans-serif;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    font-family: 'Tektur', sans-serif;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Календарь */
+
+.calendar-wrapper {
+        margin: 0;  /* Убираем все отступы сверху и снизу */
+        padding-top: 0;  /* Убираем отступ сверху */
+        padding-bottom: 0; /* Убираем отступ снизу */
+        background-color: #0a1f44; /* Темный фон для календаря */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 80px;
+        border-radius: 0px;
+    }
+    
+    .calendar-container {
+        width: 750px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .calendar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .calendar-box {
+        flex: 1;
+        padding-right: 20px;
+    }
+    
+    .calendar-box h2 {
+        text-align: left;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    .calendar-day {
+        text-align: center;
+        padding: 10px;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .calendar-day.current-day {
+        background-color: #007bff;
+        color: white;
+    }
+    
+    .calendar-day.event-day {
+        background-color: #007bff;
+        color: white;
+    }
+    
+    .calendar-image {
+        flex: 1;
+        text-align: right;
+    }
+    
+    .calendar-img {
+        width: 100%;
+        height: auto;
+    }
+
+/* Модельное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.calendar-day {
+    position: relative; /* Нужно для точного позиционирования точки */
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+}
+
+.event-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 5px auto; /* Позиционируем точку под днем */
+}
+
+.all-events {
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ff5a00;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.all-events:hover {
+    background-color: #ff4500;
+}
+
+/* Стили для надписи "СТАРТАПЫ" */
+.startup-title {
+    text-align: left;  /* Сдвигаем текст влево */
+    margin-top: 40px;  /* Отступ сверху */
+    margin-bottom: 40px;  /* Отступ снизу */
+    padding-left: 0;  /* Отступ от левого края */
+    padding-right: 900px;
+}
+
+.startup-title h1 {
+    font-size: 60px;  /* Увеличиваем размер шрифта */
+    font-family: 'Mixed', sans-serif;  /* Используем шрифт из Google Fonts */
+    color: #333;  /* Цвет текста */
+    margin: 0;
+}
+
+/* Слайдер */
+.slider {
+    margin-top: 50px;  /* Отступ сверху от предыдущих элементов */
+    padding-bottom: 20px;
+    margin-bottom: 80px; /* Увеличиваем отступ снизу */
+    width: 45vw;
+    max-width: 1200px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.slick-slider, .slick-list {
+    width: 100%;
+    height: 100%;
+}
+
+.slick-slider, .slick-list {
+    width: 100%;
+    height: 100%;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Подвал */
+footer {
+    width: 100%;
+    background-color: #3c3c3c; /* Темный фон для подвала */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+/* Блоки */
+/* Оставляем контейнер с блоками по центру */
+.blocks-container {
+    padding: 50px 0;
+    min-height: 600px; /* Минимальная высота, чтобы фон растянулся вверх */ 
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center; /* Выравниваем по центру */
+    width: 100%;
+}
+/* Контейнер для фона */
+.background-container {
+    background-color:#0a1f44; /* Цвет фона, который будет растягиваться */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* Заголовок инфоблока */
+.news-title h2 {
+    margin-bottom: 10px; 
+    font-size: 60px;
+    font-family: 'Mixed', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 50px;
+    margin-top: 20px; /* Убираем отрицательные отступы */
+}
+.news-title {
+    color: rgb(255, 255, 255); /* Цвет шрифта */
+    font-size: 60px;
+    font-family: 'Mixed', sans-serif;
+    color: #333;
+    font-weight: bold;
+    text-align: left; /* Выравниваем по левому краю */
+    margin-top: 135px; /* Отступ сверху */
+    margin-bottom: 20px; /* Отступ снизу */
+    width: 100%;
+    padding-left: 145px; /* Отступ слева */
+    padding-right: 90px; /* Отступ справа */
+}
+    
+
+/* Блоки сверху и снизу */
+.top-blocks, .bottom-blocks {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 0; /* Убираем верхний отступ */
+    margin-bottom: 0; /* Убираем нижний отступ */
+    padding-top: 20px; /* Небольшой внутренний отступ сверху */
+    padding-bottom: 0; /* Убираем внутренний отступ снизу */
+}
+
+
+.top-blocks {
+    margin-bottom: 80px;
+}
+
+.bottom-blocks {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Инфоблок */
+.info-block {
+    margin: 0 10px; /* Убираем отступ сверху */
+    padding: 20px; /* Добавляем небольшой внутренний отступ */
+    width: 350px;
+    height: 400px;
+    background-color: #41b7de;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    border-radius: 20px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-block:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+}
+/* Подвал с формой */
+.contact-form {
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Увеличиваем отступ сверху, чтобы отделить от блока новостей */
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-field label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field input, .form-field textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Иконки социальных сетей */
+.icons-row {
+    display: flex;
+    justify-content: space-between; /* Раскидывает иконки равномерно */
+    align-items: center; /* Выравнивает их по одной линии */
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 80px 0; /* Отступ сверху и снизу */
+    margin-top: 120px; /* Отделяет от инфоблока выше */
+}
+.icon-item{
+    margin: 0 30px;
+}
+.icon-container {
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 40px; /* Уменьшаем отступ снизу */
+}
+
+.icon {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+
+/* Отделение инфо-блоков от иконок */
+.blocks-container {
+    margin-top: 15px; /* Увеличим отступ между иконками и блоками */
+    background-color: #0056b3;
+    margin-top: 15px;
+    border-radius: 20px; /* Закругленные углы */
+    padding: 20px; /* Отступы внутри */
+    display: inline-block; /* Чтобы размер подстраивался под содержимое */
+}
+    
+
+
+/* Отделение формы от иконок */
+.contact-form {
+    margin-top: 20px; /* Увеличим отступ между иконками и формой */
+    padding: 50px 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.icon img {
+    width: 100px; 
+    height: 100px;
+    object-fit: contain;
+}
+/* Скрыть модальное окно по умолчанию */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* затемненный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для содержимого модального окна */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Стили для кнопки закрытия */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
