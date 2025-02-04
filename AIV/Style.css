@@ -6,7 +6,6 @@
 }
 
 body {
-    font-family: 'Tektur', sans-serif;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -17,6 +16,7 @@ body {
 
 /* Меню */
 .menu {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,7 +43,7 @@ nav li {
 nav a {
     color: #333;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 25px;
     padding: 12px 20px;
     display: block;
     line-height: 1.5;
@@ -60,7 +60,7 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 110vh;
+    height: 102vh;
     text-align: center;
     color: white;
     display: flex;
@@ -92,10 +92,12 @@ nav a:hover {
 /* Календарь */
 
 .calendar-wrapper {
+        background: linear-gradient(to bottom, #000000, #03295d);
+        position:relative;
+        height: 100vh;
         margin: 0;  /* Убираем все отступы сверху и снизу */
         padding-top: 0;  /* Убираем отступ сверху */
         padding-bottom: 0; /* Убираем отступ снизу */
-        background-color: #0a1f44; /* Темный фон для календаря */
         width: 100%;
         display: flex;
         justify-content: center;
@@ -105,6 +107,7 @@ nav a:hover {
     
     .calendar-container {
         width: 750px;
+        height:500px;
         background-color: #fff;
         border-radius: 10px;
         padding: 20px;
@@ -113,8 +116,40 @@ nav a:hover {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+    .month-year{
+        font-family: Sans-serif;
+        font-size:25px;
+    }
+    .next-month{
+     background-color: #ff5a00; /* Зеленый фон */
+    color: white; /* Белый текст */
+    padding: 15px 20px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Без подчеркивания */
+    display: inline-block; /* Блок в одну строку */
+    font-size: 10px; /* Размер шрифта */
+    margin: 4px 2px; /* Отступы вокруг кнопки */
+    cursor: pointer; /* Курсор в виде руки */
+    border-radius: 8px; /* Скругленные углы */
+    border: none; /* Без рамки */
+    transition: background-color 0.3s ease; /* Плавное изменение фона */
+    }
+    .prev-month{
+        background-color: #ff5a00; /* Зеленый фон */
+       color: white; /* Белый текст */
+       padding: 15px 20px; /* Отступы внутри кнопки */
+       text-align: center; /* Выравнивание текста */
+       text-decoration: none; /* Без подчеркивания */
+       display: inline-block; /* Блок в одну строку */
+       font-size: 10px; /* Размер шрифта */
+       margin: 4px 2px; /* Отступы вокруг кнопки */
+       cursor: pointer; /* Курсор в виде руки */
+       border-radius: 8px; /* Скругленные углы */
+       border: none; /* Без рамки */
+       transition: background-color 0.3s ease; /* Плавное изменение фона */
+       }
     .calendar-content {
+        font-family: Mixed;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -127,8 +162,10 @@ nav a:hover {
     }
     
     .calendar-box h2 {
+        margin-top: 15px;
+        padding-left: 17px;
         text-align: left;
-        font-size: 26px;
+        font-size: 30px;
         margin-bottom: 10px;
     }
     
@@ -139,40 +176,40 @@ nav a:hover {
         margin-bottom: 10px;
     }
     
-    .calendar-days {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
-        margin-top: 10px;
-    }
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+     margin-top: 10px;
+}
     
-    .calendar-day {
-        text-align: center;
-        padding: 10px;
-        background-color: #f7f7f7;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    .calendar-day.current-day {
+.calendar-day {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
+}    
+.calendar-day.current-day {
         background-color: #007bff;
         color: white;
-    }
+}
     
-    .calendar-day.event-day {
-        background-color: #007bff;
-        color: white;
-    }
+.calendar-day.event-day {
+    background-color: #007bff;
+    color: white;
+}
     
     .calendar-image {
-        flex: 1;
-        text-align: right;
-    }
+    flex: 1;
+    text-align: right;
+}
     
-    .calendar-img {
-        width: 100%;
-        height: auto;
-    }
+.calendar-img {
+    width: 300px;
+    height: 350px;
+}
 
 /* Модельное окно */
 .modal {
@@ -213,6 +250,10 @@ nav a:hover {
 }
 
 .calendar-day {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
     position: relative; /* Нужно для точного позиционирования точки */
     display: inline-block;
     width: 40px;
@@ -231,6 +272,8 @@ nav a:hover {
 }
 
 .all-events {
+    padding-left: 15px;
+    margin: 15px;
     cursor: pointer;
     display: inline-block;
     padding: 12px 25px;
@@ -246,70 +289,92 @@ nav a:hover {
     background-color: #ff4500;
 }
 
-/* Стили для надписи "СТАРТАПЫ" */
-.startup-title {
-    text-align: left;  /* Сдвигаем текст влево */
-    margin-top: 40px;  /* Отступ сверху */
-    margin-bottom: 40px;  /* Отступ снизу */
-    padding-left: 0;  /* Отступ от левого края */
-    padding-right: 900px;
+.news-h1{
+    font-size: 60px;
+    font-family: 'Mixed', sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left; /* Выравниваем по левому краю */
+    margin-top: 135px; /* Отступ сверху */
+    margin-bottom: 20px; /* Отступ снизу */
+    width: 100%;
+    padding-left: 60px; /* Отступ слева */
+    padding-right: 90px; /* Отступ справа */
 }
 
-.startup-title h1 {
-    font-size: 60px;  /* Увеличиваем размер шрифта */
-    font-family: 'Mixed', sans-serif;  /* Используем шрифт из Google Fonts */
-    color: #333;  /* Цвет текста */
-    margin: 0;
+/* СЛАЙДЕР */
+
+.slider-background{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #01285d, #000000);
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-/* Слайдер */
 .slider {
-    margin-top: 50px;  /* Отступ сверху от предыдущих элементов */
-    padding-bottom: 20px;
-    margin-bottom: 80px; /* Увеличиваем отступ снизу */
-    width: 45vw;
-    max-width: 1200px;
+    width: 700px;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    position: relative;
     overflow: hidden;
 }
 
-
-.slick-slider, .slick-list {
-    width: 100%;
-    height: 100%;
-}
-
-.slick-slider, .slick-list {
-    width: 100%;
-    height: 100%;
-}
-
-.slick-track {
+.slides {
     display: flex;
-    align-items: center;
-    height: 100%;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 
-.slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.slide {
+    width: 300px;
+    height: 350px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5;
 }
 
-.slick-slide img {
+.slide img {
     width: 100%;
-    height: 100%;
+    height: 180px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+.slide h3 {
+    margin: 10px 0;
+}
+
+.slide p {
+    font-size: 14px;
+}
+
+.active {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    font-size: 24px;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 /* Подвал */
@@ -328,21 +393,24 @@ footer p {
 
 /* Блоки */
 /* Оставляем контейнер с блоками по центру */
-.blocks-container {
-    padding: 50px 0;
-    min-height: 600px; /* Минимальная высота, чтобы фон растянулся вверх */ 
-    display: flex;
-    width: 100vw;
-    flex-direction: column;
-    align-items: center; /* Выравниваем по центру */
+.news-container{
+    background: linear-gradient(to bottom, #000000, #01285E);
     width: 100%;
+    height: 100%;
 }
-/* Контейнер для фона */
-.background-container {
-    background-color:#0a1f44; /* Цвет фона, который будет растягиваться */
-    width: 100%;
-    display: flex;
+.blocks-container {
+    background: linear-gradient(to bottom,#050215 , #01285E);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    grid-template-rows: repeat(2, auto); /* 2 ряда */
+    margin: 0 auto; /* Центрируем */  
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    grid-template-rows: repeat(2, auto); /* 2 ряда */
+    gap: 20px; /* Отступы между блоками */
     justify-content: center;
+    align-items: center;
+    width: 85%; /* Чтобы блоки не прилипали к краям */
+    padding: 50px 0;
 }
 /* Заголовок инфоблока */
 .news-title h2 {
@@ -358,16 +426,15 @@ footer p {
     margin-top: 20px; /* Убираем отрицательные отступы */
 }
 .news-title {
-    color: rgb(255, 255, 255); /* Цвет шрифта */
     font-size: 60px;
     font-family: 'Mixed', sans-serif;
-    color: #333;
+    color: #ffffff;
     font-weight: bold;
     text-align: left; /* Выравниваем по левому краю */
     margin-top: 135px; /* Отступ сверху */
     margin-bottom: 20px; /* Отступ снизу */
     width: 100%;
-    padding-left: 145px; /* Отступ слева */
+    padding-left: 60px; /* Отступ слева */
     padding-right: 90px; /* Отступ справа */
 }
     
@@ -395,9 +462,10 @@ footer p {
 
 /* Инфоблок */
 .info-block {
+    width: 100%; /* Подстраиваем под грид */
+    max-width: 350px; /* Чтобы не растягивались слишком сильно */
     margin: 0 10px; /* Убираем отступ сверху */
     padding: 20px; /* Добавляем небольшой внутренний отступ */
-    width: 350px;
     height: 400px;
     background-color: #41b7de;
     color: #333;
@@ -409,13 +477,16 @@ footer p {
     box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.info-block {
+    background: linear-gradient(to bottom, #ffffff, #aaaaaa); /* Градиент, имитирующий тень */
+}
 .info-block:hover {
     transform: translateY(-12px);
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
 }
 /* Подвал с формой */
 .contact-form {
+
     border-radius: 10px;
     background-color: #fff;
     padding: 50px 20px;
@@ -499,43 +570,13 @@ footer p {
 }
 
 
-/* Отделение инфо-блоков от иконок */
-.blocks-container {
-    margin-top: 15px; /* Увеличим отступ между иконками и блоками */
-    background-color: #0056b3;
-    margin-top: 15px;
-    border-radius: 20px; /* Закругленные углы */
-    padding: 20px; /* Отступы внутри */
-    display: inline-block; /* Чтобы размер подстраивался под содержимое */
-}
-    
-
-
 /* Отделение формы от иконок */
-.contact-form {
-    margin-top: 20px; /* Увеличим отступ между иконками и формой */
-    padding: 50px 20px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+
 .icon img {
     width: 100px; 
     height: 100px;
     object-fit: contain;
 }
-/* Скрыть модальное окно по умолчанию */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* затемненный фон */
-    justify-content: center;
-    align-items: center;
-}
-
 /* Стили для содержимого модального окна */
 .modal-content {
     background-color: white;

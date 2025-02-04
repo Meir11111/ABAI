@@ -71,6 +71,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentMonthYear.textContent = `${month + 1} / ${year}`;
     }
+// СЛАЙДЕР
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentIndex = 1; // Начальный центральный слайд
+
+function updateSlider() {
+    slides.forEach((slide, index) => {
+        slide.classList.remove("active");
+        const offset = index - currentIndex;
+        slide.style.transform = `translateX(${offset * 50}px) scale(${1 - Math.abs(offset) * 0.2})`;
+        slide.style.opacity = offset === 0 ? "1 " : "0.5";
+    });
+    slides[currentIndex].classList.add("active");
+}
+
+prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+    }
+});
+
+nextBtn.addEventListener("click", () => {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateSlider();
+    }
+});
+
+updateSlider();
 
     // Функция открытия модального окна
     function openModal(eventData) {

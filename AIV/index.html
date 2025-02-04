@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABAI IT VALLEY</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <script src="Script.js"></script>
+
+    <!-- Меню -->
+    <header class="menu">
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Стартапы</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Обучение</a></li>
+                <li><a href="#">Сфера IT услуг</a></li>
+                <li><a href="#">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Баннер "ABAI IT VALLEY" -->
+    <section class="hero">
+        <h1>ABAI IT VALLEY</h1>
+        <h2>Инвестируем и обучаем</h2>
+        <p>Мы активно инвестируем в инновации и обучаем будущих лидеров IT-отрасли.</p>
+    </section>
+ <!-- Календарь -->
+<section class="calendar-wrapper">
+    <div class="calendar-container">
+        <div class="calendar-content">
+            <div class="calendar-box">
+                <h2>Календарь мероприятий</h2>
+                <div class="calendar-header">
+                    <button class="prev-month">←</button>
+                    <span class="month-year"></span>
+                    <button class="next-month">→</button>
+                </div>
+                <div class="calendar-days"></div>
+                <div class="event-info"></div>
+                <button class="all-events">Все мероприятия</button>
+            </div>
+            <div class="calendar-image">
+                <img src="Valley.jpg" alt="Картинка" class="calendar-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно -->
+<div class="modal" id="eventsModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Подробности события</h2>
+        <p class="event-details"></p> <!-- Место для отображения информации о событии -->
+    </div>
+</div>
+    <!-- Слайдер -->
+    <div class="slider-background">
+    <h1 class="news-h1">СТАРТАПЫ</h1>
+    <div class="slider-container">
+        <button id="prevBtn" class="nav-btn">❮</button>
+        
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="Valley.jpg" alt="1">
+                    <h3>Title 1</h3>
+                    <p>Описание 1</p>
+                </div>
+                <div class="slide">
+                    <img src="Valley.jpg" alt="2">
+                    <h3>Title 2</h3>
+                    <p>Описание 2</p>
+                </div>
+                <div class="slide active">
+                    <img src="Valley.jpg" alt="3">
+                    <h3>Title 3</h3>
+                    <p>Описание 3</p>
+                </div>
+                <div class="slide">
+                    <img src="Valley.jpg" alt="4">
+                    <h3>Title 4</h3>
+                    <p>Описание 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <button id="nextBtn" class="nav-btn">❯</button>
+    </div>
+<!-- НОВОСТИ -->
+ <div class="news-container">
+<h2 class="news-title">НОВОСТИ</h2>
+<div class="background-container"></div>
+<div class="blocks-container">
+    <div class="info-block">1</div>
+    <div class="info-block">2</div>
+    <div class="info-block">3</div>
+    <div class="info-block">4</div>
+    <div class="info-block">5</div>
+    <div class="info-block">6</div>
+</div>
+</div>
+      <!-- Иконки -->
+      <div class="icon-container">
+        <div class="icon-item">
+            <img src="abai_oblysy_logo 1.jpg" alt="Icon 1" class="icon">
+        </div>
+        <div class="icon-item">
+            <img src="download 1.jpg" alt="Icon 2" class="icon">
+        </div>
+        <div class="icon-item">
+            <img src="Group 75.jpg" alt="Icon 3" class="icon">
+        </div>
+    </div>
+      
+<!-- Форма обратной связи  -->
+<section class="contact-form">
+    <div class="container">
+        <h3>Остались вопросы? Напишите нам, заполнив форму:</h3>
+        <form action="https://getform.io/f/bzyyklda" method="POST" id="contact-form">
+            <div class="form-field">
+                <label for="name">Имя и Фамилия:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error">Пожалуйста, введите имя</span>
+            </div>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error">Пожалуйста, введите правильный email</span>
+            </div>
+            <div class="form-field">
+                <label for="phone">Телефон:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-field">
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <span class="error-message" id="message-error">Пожалуйста, напишите сообщение</span>
+            </div>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+        <div class="response-message" id="response-message"></div>
+    </div>
+</section>
+<style>
+/* Стилизация формы */
+.contact-form .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.response-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+</style>
+
+    <!-- Подвал с ABAI IT VALLEY -->
+    <footer>
+        <p>ABAI IT VALLEY</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                arrows: true,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 5000
+            });
+        });
+    </script>
+</body>
+</html>
